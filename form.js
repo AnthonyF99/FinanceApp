@@ -2,7 +2,7 @@ const formContent = document.querySelector(".form-content");
 const test1 = document.getElementById('test1');
 
 
-// Function to manage formtype (add or delete)
+// WIP Function to manage formtype (add or delete)
 export async function openForm(formType) {
   let title = ""
     switch (formType) {
@@ -30,23 +30,28 @@ export async function openForm(formType) {
     dynamicInput.setAttribute("name", name);
     dynamicInput.setAttribute("placeholder", placeholder);
     dynamicInput.setAttribute("id", id);
-    dynamicInput.setAttribute("value", "");  // Optionnel: valeur par défaut
+    dynamicInput.setAttribute("value", "");  // Facultative: default value
     // Append the input field to the form
     formContent.appendChild(text1);
     formContent.appendChild(dynamicInput);
     
-      // For Income Goal, set the type to number
-      if (name === "Income Goal" || name === "Actual Income") {
-        dynamicInput.setAttribute("type", "number");
-        dynamicInput.setAttribute("min", "0");  // Optional: set a minimum value (0 in this case)
-      } else {
-        dynamicInput.setAttribute("type", "text");
-      }
+   // Use Set pour for much better performance
+  const numberFields = new Set(["Income Goal", "Actual Income"]);
+  const numberIds = new Set(["setActualSrcIncome", "setActualSrcSpendings", "setActualSrcAssets"]);
+
+  // Checking if the id match
+  if (numberFields.has(name) || numberIds.has(id)) {
+    dynamicInput.type = "number";
+    dynamicInput.min = "0"; // min value
+  } else {
+    dynamicInput.type = "text";
+  }
+
   }
   
   // Function to clear the form (for resetting the modal)
   export async function ClearForm() {
-    formContent.innerHTML = "";  // Efface tout le contenu du formulaire
+    formContent.innerHTML = "";  // clean the form
   }
   
   export async function CreateSubmitBtn(id) {
