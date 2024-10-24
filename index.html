@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>FinanceYou</title>
+        <link rel="stylesheet" href="index.css" />
+        <script
+            src="https://kit.fontawesome.com/e79e12b662.js"
+            crossorigin="anonymous"
+        ></script>
+
+        <script type="module" src="/modal.js" defer></script>
+        <script type="module" src="/chart.js" defer></script>
+        <script type="module" src="/index.js"></script>
+        <script type="module" src="/incomeGoal.js" defer></script>
+        <script type="module" src="/incomeSrc.js" defer></script>
+        <script type="module" src="/form.js" defer></script>
+    </head>
+    <body>
+        <header>
+            <nav class="nav">
+                <div class="sidenav">
+                    <span
+                        ><i class="fa-solid fa-bars" id="menu-btn-phone"></i
+                    ></span>
+                    <ul id="links">
+                        <li class="link"><a href="#">Dashboard</a></li>
+                        <li class="link"><a href="#">Résumé</a></li>
+                        <li class="link"><a href="#">Gestion</a></li>
+                        <li class="link"><a href="#">Revenus</a></li>
+                        <li class="link"><a href="#">Dépenses</a></li>
+                        <li class="link"><a href="#">Investissement</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <main>
+            <section class="summary section">
+                <div class="summary">
+                    <h2>Summary</h2>
+                    <div class="quick-view">
+                        <div class="item-quickview">
+                            Income
+                            <div class="item-info">
+                                <i class="fa-solid fa-hand-holding-dollar"></i>
+                                <p>6950</p>
+                            </div>
+                        </div>
+                        <div class="item-quickview">
+                            Expenses
+                            <div class="item-info">
+                                <i class="fa-solid fa-coins"></i>
+                                <p>6950</p>
+                            </div>
+                        </div>
+                        <div class="item-quickview">
+                            Bills
+                            <div class="item-info">
+                                <i class="fa-solid fa-receipt"></i>
+                                <p>6950</p>
+                            </div>
+                        </div>
+                        <div class="item-quickview">
+                            Savings
+                            <div class="item-info">
+                                <i class="fa-solid fa-piggy-bank"></i>
+                                <p>6950</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="profile">
+                        <div class="user-info">
+                            <p id="username">UserName</p>
+                            <p>Métier</p>
+                        </div>
+                        <img src="#" alt="profile image" />
+                    </div>
+                </div>
+                <div class="date">
+                    <div class="date-info">
+                        <span
+                            ><button class="nav-btn" id="prev-btn">
+                                <
+                            </button></span
+                        >
+                        <p class="date-format">
+                            <span>Jan</span><span>2019</span>
+                        </p>
+
+                        <span
+                            ><button class="nav-btn" id="next-btn">
+                                >
+                            </button></span
+                        >
+                    </div>
+                </div>
+                <div class="grid-view">
+                    <div class="grid-viewitem" id="networth">
+                        <p>Total Net worth</p>
+                        <p>$278.378</p>
+                    </div>
+                    <div
+                        class="grid-viewitem"
+                        id="income-src"
+                        data-modal-type="incomeSrc"
+                    >
+                        <p>Income Source</p>
+                        <canvas id="income-chart"></canvas>
+                    </div>
+                    <div class="grid-viewitem" id="spendings">
+                        <p>Spendings</p>
+                        <p>$9.228</p>
+                        <canvas id="spending-chart"></canvas>
+                    </div>
+                    <div class="grid-viewitem" id="income">
+                        <p>Income</p>
+                        <p>$24.050</p>
+                        <canvas id="income-line"></canvas>
+                    </div>
+                    <div
+                        class="grid-viewitem"
+                        id="spendings-src"
+                        data-modal-type="spendingsSrc"
+                    >
+                        <p>Spendings</p>
+                        <ul class="spending-list">
+                            <li class="spending-item">
+                                <div id="house-icon">
+                                    <i class="fa-solid fa-house"></i>
+                                </div>
+                                <div class="spending-info">
+                                    <p class="spending-category">Housing</p>
+                                    <p class="actual-spending">$3,452</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div
+                        class="grid-viewitem"
+                        id="income-goal"
+                        data-modal-type="incomeGoal"
+                    >
+                        <ul>
+                            <li><p id="percentage">61%</p></li>
+                            <li><p id="text-income-goal">Income Goal</p></li>
+                            <li>
+                                <p id="month-progress">Progrress to month</p>
+                            </li>
+                        </ul>
+                        <div class="user-income-goal">
+                            <span id="user-actual-income">10,000</span>
+                            <span>/</span>
+                            <span id="user-income-goal">50 000</span>
+                        </div>
+                        <div id="myProgress">
+                            <div id="myBar"></div>
+                        </div>
+                    </div>
+                    <div class="grid-viewitem" id="investments">
+                        <p>Investments</p>
+                        <p>$24.050</p>
+                    </div>
+                    <div
+                        class="grid-viewitem"
+                        id="assets"
+                        data-modal-type="assets"
+                    >
+                        <p>Assets</p>
+                        <canvas id="asset-chart"></canvas>
+                        <div class="assets-type">
+                            <div class="asset">
+                                <p class="asset-category">Gold</p>
+                                <p class="actual-asset">$15,700</p>
+                            </div>
+                            <div class="asset">
+                                <p class="asset-category">Stock</p>
+                                <p class="actual-asset">$22,500</p>
+                            </div>
+                            <div class="asset">
+                                <p class="asset-category">Warehouse</p>
+                                <p class="actual-asset">$120,000</p>
+                            </div>
+                            <div class="asset">
+                                <p class="asset-category">Land</p>
+                                <p class="actual-asset">$135,000</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid-viewitem" id="transaction">
+                        <p>Transaction</p>
+                        <p>$24.050</p>
+                    </div>
+                </div>
+            </section>
+            <section class="gestion section">
+                <div class="gestion"></div>
+            </section>
+            <!-- The Modal -->
+            <div id="myModal" class="modal">
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <h2 class="modal-title">Test</h2>
+                    <p>Some text in the Modal..</p>
+                    <div class="modal-form">
+                        <div class="form-content"></div>
+                        <div class="modal-btns">
+                            <button class="choice-btn" id="delete-btn">
+                                <i class="fa-solid fa-minus"></i>
+                            </button>
+                            <button class="choice-btn" id="add-btn">
+                                <i class="fa-solid fa-plus"></i>
+                            </button>
+                            <p id="test1">aaa</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
+    </body>
+</html>

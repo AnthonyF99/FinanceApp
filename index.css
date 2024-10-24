@@ -1,0 +1,412 @@
+/* Global */
+:root {
+  --mainbg-color: #222222;
+  --secondary-color: #333333;
+  --item-coor : #4b4a54;
+  --text-color: #F0EFF4;
+}
+
+body {
+    background-color: var(--mainbg-color);
+    color: var(--text-color);
+}
+
+p {
+  font-size: 1.1em;
+}
+
+.fa-solid {
+    color: black;
+}
+
+/* Sidenav */
+
+.sidenav > ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.sidenav {
+    height: 100%;
+    width: 200px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: var(--secondary-color);
+    overflow-x: hidden;
+    padding-top: 20px;
+  }
+  .sidenav > span > i {
+    display: none;
+  }
+
+.link {
+    padding-left: 20%;
+}
+.link a {
+    color: white;
+    font-size: 1.3em;
+    text-decoration: none;
+}
+
+.link a:hover {
+    color: orange;
+}
+
+main {
+    margin-left: 200px; /* Same as the width of the sidenav */
+  }
+
+  /* Summary code */
+
+  .section {
+    display: flex;
+    flex-direction: column;
+  }
+  div.summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 5%;
+  }
+
+  .quick-view {
+    display: flex;
+    gap: 30px;
+  }
+
+  .item-quickview {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 50px;
+    background-color: var(--secondary-color);
+    border-radius: 10px;
+    transition: all 0.3s ease-in-out;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+  }
+  .item-quickview:hover {
+    filter: brightness(2);
+  }
+
+  .item-info {
+    display: flex;
+    align-items: baseline;
+  }
+
+  .item-info i {
+    font-size: 1.5em;
+    margin-right: 20px;
+    color: yellow;
+  }
+
+  /* Profile */
+  .profile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 35px;
+  }
+  .user-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+  }
+  .profile img {
+    cursor: pointer;
+  }
+
+  /* Date */
+
+  .date {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 5%;
+  }
+  .date-info {
+    background-color:#151e46;
+    padding: 1px 20px;
+    width: 60%;
+    border-radius: 15px;
+    font-size: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .date-format {
+    display: inline-flex;
+    gap: 10px;
+  }
+  .nav-btn {
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 24px;
+  }
+  .nav-btn:hover {
+    cursor: pointer;
+  }
+
+  /* Partie grille */
+
+  .grid-view {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    /*
+    grid-template-columns: 400px 400px 300px 500px;
+    grid-template-rows: 200px 300px 300px 300px;
+    */
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+  }
+
+  .grid-viewitem {
+    background-color: var(--secondary-color);
+    border-radius: 10px;
+    padding: 20px;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+  }
+
+  .grid-viewitem:hover {
+    background-color: #4b4b4b;
+  }
+   /* grid-row-start, grid-column-start, grid-row-end, grid-column-end */
+    #networth { grid-area: 1 / 1 / 2 / 5;}
+    #networth {
+      font-size: 1.5em;
+    }
+    #income-src { grid-area: 2 / 1 / 3 / 6;
+      cursor: pointer;
+    }
+    #spendings { grid-area: 1 / 5 / 2 / 7; }
+    #income { grid-area: 2 / 6 / 3 / 7; }
+    #spendings-src { grid-area: 1 / 7 / 3 / 8; 
+      cursor: pointer;
+      overflow-y: scroll;
+      scrollbar-color: #4c4d4e grey;
+      scrollbar-width: thin;
+      max-height: 950px;
+    }
+    .spending-list {
+      display: flex;
+      padding: 0;
+      flex-direction: column;
+    }
+    .spending-item {
+      display: flex;
+      align-items: center;
+    }
+    .spending-item div > i {
+      padding: 20px;
+      border-radius: 20px;
+      margin-right: 25px;
+      color: white;
+      font-size: 24px;
+    }
+    #house-icon i {
+      background-color: blue;
+    }
+    #personal-icon i {
+      background-color: purple;
+    }
+    #transport-icon i {
+      background-color:green;
+    }
+    .spending-item p {
+      display: flex;
+      flex-direction: column;
+      font-size: 1.2em;
+    }
+    #income-goal { grid-area: 1 / 8 / 2 / 12; 
+      cursor: pointer;
+    }
+    #income-goal ul {
+      list-style: none;
+      padding: 0;
+    }
+    #myProgress {
+      max-width: 100%;
+      width: 100%;
+      background-color: grey;
+    }
+    
+    #myBar {
+      width: 0; /* La largeur de départ est 0% */
+      max-width: 100%;
+      height: 30px;
+      background-color: white;
+    }
+    #investments { grid-area: 3 / 1 / 5 / 7; }
+    #assets { grid-area: 3 / 7 / 5 / 8;
+      cursor: pointer;
+    }
+    .assets-type {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 30%;
+      font-size: 1.2em;
+    }
+    #transaction { grid-area: 5 / 8 / 2 / 12; }
+
+
+    /* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  color: black;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+.choice-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  padding: 25px 30px;
+  font-size: 28px;
+  cursor: pointer;
+  user-select: none;
+  margin-top: 10%;
+}
+.fa-minus {
+  color: red;
+}
+.fa-plus {
+  color: green;
+}
+#add-btn {
+  color: green;
+  border-color: green;
+}
+#delete-btn {
+  color: red;
+  border-color: red;
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Scrollbar style */
+::-webkit-scrollbar {
+  width: 15px;
+  height: 10px;
+
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  background: #4c4d4e;
+}
+
+
+    /* Phone */
+
+    @media screen and (max-width: 640px) {
+      .grid-view {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+      }
+      main {
+        margin-left: 0;
+        margin: auto;
+      }
+      .grid-viewitem {
+        width: 80%;
+      }
+      #income-goal {
+        order: -1;
+      }
+      .sidenav > ul {
+        display: none;
+    }    
+    .sidenav {
+        height: 50px;
+        width: 100%;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: var(--secondary-color);
+        padding-top: 20px;
+      }
+      #menu-btn-phone {
+        display: flex;
+        color: white;
+        font-size: 24px;
+        padding-left: 5%;
+        transition: all 0.5s ease-in-out;
+      }
+      #menu-btn-phone:hover {
+        font-size: 26px;
+      }
+
+    .link {
+        padding-left: 5%;
+    }
+    
+  .section {
+    display: flex;
+    flex-direction: column;
+  }
+  div.summary {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 5%;
+    margin-top: 100px;
+  }
+
+  .quick-view {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+}
+  
